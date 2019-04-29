@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using timesheet.data;
 
 namespace timesheet.data.Migrations
 {
     [DbContext(typeof(TimesheetDb))]
-    partial class TimesheetDbModelSnapshot : ModelSnapshot
+    [Migration("20190424202650_timesheet.data.TimesheetDb.cs")]
+    partial class timesheetdataTimesheetDbcs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,8 +30,6 @@ namespace timesheet.data.Migrations
                     b.Property<string>("Code")
                         .IsRequired()
                         .HasMaxLength(10);
-
-                    b.Property<bool>("IsActive");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -49,8 +49,6 @@ namespace timesheet.data.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(500);
 
-                    b.Property<bool>("IsActive");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255);
@@ -68,13 +66,9 @@ namespace timesheet.data.Migrations
 
                     b.Property<int>("EmployeeId");
 
-                    b.Property<bool>("IsActive");
-
                     b.Property<int>("TaskId");
 
                     b.Property<decimal>("TotalLogHours");
-
-                    b.Property<DateTime>("UpdatedDate");
 
                     b.Property<DateTime>("WorkLogDateTime");
 
@@ -84,18 +78,18 @@ namespace timesheet.data.Migrations
 
                     b.HasIndex("TaskId");
 
-                    b.ToTable("WorkLogs");
+                    b.ToTable("WorkLog");
                 });
 
             modelBuilder.Entity("timesheet.model.WorkLog", b =>
                 {
                     b.HasOne("timesheet.model.Employee", "Employee")
-                        .WithMany()
+                        .WithMany("WorkLogs")
                         .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("timesheet.model.Task", "Task")
-                        .WithMany()
+                        .WithMany("WorkLogs")
                         .HasForeignKey("TaskId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

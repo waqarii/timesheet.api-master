@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190424203143_timesheet.data.TimesheetDb.TotalLogHours.cs" />
+    <Compile Remove="Migrations\20190426163606_timsheet.data.EmployeeContext.cs" />
+    <Compile Remove="Migrations\20190429190206_Timsheet.Model.EmployeeContext.cs" />
+    <Compile Remove="Migrations\20190429191710_Timsheet.Model.EmployeeContext2.cs" />
+    <Compile Remove="Migrations\20190429191835_Timsheet.Model.EmployeeContext3.cs" />
+    <Compile Remove="Migrations\20190429192242_timsheet.data.New.cs" />
+    <Compile Remove="Migrations\20190429193826_timsheet.data.New1.cs" />
+    <Compile Remove="Migrations\20190429195142_timesheet.data.ModelUpdated.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1">

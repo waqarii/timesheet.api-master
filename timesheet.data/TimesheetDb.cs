@@ -19,6 +19,7 @@ namespace timesheet.data
             modelBuilder.Entity<WorkLog>()
                         .HasOne(pt => pt.Employee)
                         .WithMany(p => p.WorkLogs)
+                        .IsRequired(true)
                         .HasForeignKey(pt => pt.EmployeeId);
 
             modelBuilder.Entity<WorkLog>()
