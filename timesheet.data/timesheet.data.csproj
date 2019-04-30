@@ -28,8 +28,4 @@
     <ProjectReference Include="..\timesheet.model\timesheet.model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\NewFolder\" />
-  </ItemGroup>
-
 </Project>

@@ -18,7 +18,7 @@ namespace timesheet.model
         [Required]
         public string Name { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
 
         public virtual ICollection<WorkLog> WorkLogs { get; set; }
     }

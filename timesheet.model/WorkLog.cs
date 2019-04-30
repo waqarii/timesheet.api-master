@@ -18,7 +18,7 @@ namespace timesheet.model
 
         public decimal TotalLogHours { get; set; }
 
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
 
         public DateTime UpdatedDate { get; set; }
 
