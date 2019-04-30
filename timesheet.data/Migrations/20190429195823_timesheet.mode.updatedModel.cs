@@ -37,19 +37,19 @@ namespace timesheet.data.Migrations
                 name: "IsActive",
                 table: "Tasks",
                 nullable: true,
-                defaultValue: false);
+                defaultValue: true);
 
             migrationBuilder.AddColumn<bool>(
                 name: "IsActive",
                 table: "Employees",
                 nullable: true,
-                defaultValue: false);
+                defaultValue: true);
 
             migrationBuilder.AddColumn<bool>(
                 name: "IsActive",
                 table: "WorkLogs",
                 nullable: true,
-                defaultValue: false);
+                defaultValue: true);
 
             migrationBuilder.AddColumn<DateTime>(
                 name: "UpdatedDate",
